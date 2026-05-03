@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1694171256930454931, guid: ebc86502fd9a99c4dadd788ad7360d07, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 49.38775
+      objectReference: {fileID: 0}
     - target: {fileID: 2175284206781070625, guid: ebc86502fd9a99c4dadd788ad7360d07, type: 3}
       propertyPath: m_Name
       value: Room Variant

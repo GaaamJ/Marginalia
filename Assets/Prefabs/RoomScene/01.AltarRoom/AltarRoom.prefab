@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2175284206781070625, guid: ebc86502fd9a99c4dadd788ad7360d07, type: 3}
       propertyPath: m_Name
-      value: Room Variant
+      value: AltarRoom
       objectReference: {fileID: 0}
     - target: {fileID: 7966728103746383466, guid: ebc86502fd9a99c4dadd788ad7360d07, type: 3}
       propertyPath: m_LocalScale.x
