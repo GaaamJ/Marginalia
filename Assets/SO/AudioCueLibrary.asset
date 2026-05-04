@@ -17,41 +17,41 @@ MonoBehaviour:
     playbackType: 1
     clips:
     - {fileID: 8300000, guid: 00dbd86defc105f4895bdb5eb8058add, type: 3}
-    volume: 1
+    volume: 0.1
     pitchRange: {x: 1, y: 1}
   - cue: 2
     playbackType: 2
     clips:
     - {fileID: 8300000, guid: 00dbd86defc105f4895bdb5eb8058add, type: 3}
-    volume: 0.7
+    volume: 0.2
     pitchRange: {x: 1, y: 1}
   - cue: 3
     playbackType: 0
     clips:
     - {fileID: 8300000, guid: 2a908c7eb73d8844cb3150f77eec25d1, type: 3}
-    volume: 0.45
+    volume: 0.25
     pitchRange: {x: 0.95, y: 1.05}
   - cue: 4
     playbackType: 0
     clips:
     - {fileID: 8300000, guid: 4b34d5763c564a44881f80dfe376441a, type: 3}
-    volume: 0.45
+    volume: 0.25
     pitchRange: {x: 0.95, y: 1.05}
   - cue: 5
     playbackType: 0
     clips:
     - {fileID: 8300000, guid: 0e60f596792ee6d4d8f7873a7b07dc41, type: 3}
-    volume: 0.45
+    volume: 0.25
     pitchRange: {x: 0.95, y: 1.05}
   - cue: 6
     playbackType: 0
     clips:
     - {fileID: 8300000, guid: 0e60f596792ee6d4d8f7873a7b07dc41, type: 3}
-    volume: 0.85
+    volume: 0.55
     pitchRange: {x: 0.98, y: 1.03}
   - cue: 7
     playbackType: 0
     clips:
     - {fileID: 8300000, guid: 11b658715dc6d83419744209bae24621, type: 3}
-    volume: 1
+    volume: 0.25
     pitchRange: {x: 0.98, y: 1.02}
