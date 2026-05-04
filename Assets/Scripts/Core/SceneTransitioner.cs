@@ -37,6 +37,7 @@ public class SceneTransitioner : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
+        ConfigureFadeImage();
         if (fadeImage) SetAlpha(0f);
     }
 
@@ -45,13 +46,18 @@ public class SceneTransitioner : MonoBehaviour
     /// <summary>나레이션 없이 페이드아웃 → 암전 → 씬 로드 → 페이드인.</summary>
     public void TransitionTo(string sceneName)
     {
-        StartCoroutine(DoTransition(sceneName, null));
+        StartCoroutine(DoTransition(sceneName, null, AudioCue.None));
     }
 
     /// <summary>암전 중 나레이션 포함 트랜지션.</summary>
     public void TransitionTo(string sceneName, NarrationBlock[] blocks)
     {
-        StartCoroutine(DoTransition(sceneName, blocks));
+        StartCoroutine(DoTransition(sceneName, blocks, AudioCue.None));
+    }
+
+    public void TransitionTo(string sceneName, NarrationBlock[] blocks, AudioCue cueAfterFadeOut)
+    {
+        StartCoroutine(DoTransition(sceneName, blocks, cueAfterFadeOut));
     }
 
     /// <summary>씬 로드 없이 페이드인만 (씬 시작 시 호출).</summary>
@@ -62,9 +68,11 @@ public class SceneTransitioner : MonoBehaviour
 
     // ── 내부 ─────────────────────────────────────────────
 
-    private IEnumerator DoTransition(string sceneName, NarrationBlock[] blocks)
+    private IEnumerator DoTransition(string sceneName, NarrationBlock[] blocks, AudioCue cueAfterFadeOut)
     {
         yield return DoFade(0f, 1f, fadeOutDuration);
+
+        AudioManager.PlayCue(cueAfterFadeOut);
 
         if (blocks != null && blocks.Length > 0 && screenNarrator != null)
             yield return screenNarrator.ShowBlocks(blocks);
@@ -97,5 +105,26 @@ public class SceneTransitioner : MonoBehaviour
         var c = fadeImage.color;
         c.a = a;
         fadeImage.color = c;
+    }
+
+    private void ConfigureFadeImage()
+    {
+        if (!fadeImage) return;
+
+        fadeImage.raycastTarget = false;
+
+        var color = fadeImage.color;
+        color.r = 0f;
+        color.g = 0f;
+        color.b = 0f;
+        fadeImage.color = color;
+
+        var rect = fadeImage.rectTransform;
+        rect.anchorMin = Vector2.zero;
+        rect.anchorMax = Vector2.one;
+        rect.offsetMin = Vector2.zero;
+        rect.offsetMax = Vector2.zero;
+        rect.pivot = new Vector2(0.5f, 0.5f);
+        rect.SetAsLastSibling();
     }
 }

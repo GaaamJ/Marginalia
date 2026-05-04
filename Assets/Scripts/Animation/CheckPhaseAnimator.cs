@@ -47,7 +47,12 @@ public class CheckPhaseAnimator : MonoBehaviour
     [Header("Result Color")]
     public float resultColorDuration = 0.5f;
 
+    [Header("Audio")]
+    [SerializeField] private AudioCue drawCue = AudioCue.PaperCheckSfx;
+    [SerializeField] private float drawCueInterval = 0.08f;
+
     private Coroutine _symbolShakeCoroutine;
+    private Coroutine _drawCueCoroutine;
 
     // ── Public Methods ─────────────────────────────────────
 
@@ -59,11 +64,13 @@ public class CheckPhaseAnimator : MonoBehaviour
 
         StartSymbolShake();
 
+        StartDrawCueLoop();
         yield return Animate(t => checkMarkGraphic.SetOProgress(t),        oDrawDuration);
         yield return new WaitForSeconds(symbolGap);
         yield return Animate(t => checkMarkGraphic.SetDividerProgress(t),  divDrawDuration);
         yield return new WaitForSeconds(symbolGap);
         yield return Animate(t => checkMarkGraphic.SetXProgress(t),        xDrawDuration);
+        StopDrawCueLoop();
         yield return new WaitForSeconds(symbolGap);
         yield return WaitShake();
     }
@@ -130,6 +137,7 @@ public class CheckPhaseAnimator : MonoBehaviour
     public void StopSymbolShake()
     {
         if (_symbolShakeCoroutine != null) { StopCoroutine(_symbolShakeCoroutine); _symbolShakeCoroutine = null; }
+        StopDrawCueLoop();
         if (checkMarkGraphic != null)
         {
             checkMarkGraphic.SetSymbolShakes(Vector2.zero, Vector2.zero, Vector2.zero);
@@ -188,6 +196,30 @@ public class CheckPhaseAnimator : MonoBehaviour
 
     // ── Wait Shake ─────────────────────────────────────────
 
+    private void StartDrawCueLoop()
+    {
+        StopDrawCueLoop();
+        if (drawCue == AudioCue.None) return;
+        _drawCueCoroutine = StartCoroutine(DrawCueLoop());
+    }
+
+    private void StopDrawCueLoop()
+    {
+        if (_drawCueCoroutine == null) return;
+        StopCoroutine(_drawCueCoroutine);
+        _drawCueCoroutine = null;
+    }
+
+    private IEnumerator DrawCueLoop()
+    {
+        var wait = new WaitForSeconds(Mathf.Max(0.01f, drawCueInterval));
+        while (true)
+        {
+            AudioManager.PlayCue(drawCue);
+            yield return wait;
+        }
+    }
+
     private IEnumerator WaitShake()
     {
         checkMarkGraphic.ResetJudgeOnly();
@@ -226,6 +258,7 @@ public class CheckPhaseAnimator : MonoBehaviour
 
         // 저항: 출발 직후 반대 방향으로 밀림
         Vector2 resistEnd = start - dir * resistDistance;
+        StartDrawCueLoop();
         yield return LerpHead(start, resistEnd, resistDuration);
 
         Vector2 current = resistEnd;
@@ -257,6 +290,8 @@ public class CheckPhaseAnimator : MonoBehaviour
         Vector2 overshootPos = target + dir * overshootAmount;
         yield return LerpHead(target,       overshootPos, overshootDuration);
         yield return LerpHead(overshootPos, target,       overshootDuration * 0.65f);
+
+        StopDrawCueLoop();
 
         yield return new WaitForSeconds(arrivalPause);
     }

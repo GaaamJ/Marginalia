@@ -23,9 +23,9 @@ MonoBehaviour:
     rotation: {x: 0, y: -180, z: 0}
   - prefab: {fileID: 6926579925534126153, guid: c54d2c17ff2062d45aec5768ac866f7c, type: 3}
     objectID: LeftDoor
-    position: {x: -9, y: 2, z: 22}
+    position: {x: -9, y: 2, z: 21.8}
     rotation: {x: -90, y: 0, z: 0}
   - prefab: {fileID: 547763730710027678, guid: fde91fc7085fafa42b95344067a3cb31, type: 3}
     objectID: RightDoor
-    position: {x: 6, y: 2, z: 22}
+    position: {x: 6, y: 2, z: 21.8}
     rotation: {x: -90, y: 0, z: 0}

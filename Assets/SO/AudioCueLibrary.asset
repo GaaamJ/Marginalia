@@ -29,7 +29,7 @@ MonoBehaviour:
     playbackType: 0
     clips:
     - {fileID: 8300000, guid: 2a908c7eb73d8844cb3150f77eec25d1, type: 3}
-    volume: 0.25
+    volume: 1
     pitchRange: {x: 0.95, y: 1.05}
   - cue: 4
     playbackType: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
     playbackType: 0
     clips:
     - {fileID: 8300000, guid: 0e60f596792ee6d4d8f7873a7b07dc41, type: 3}
-    volume: 0.55
+    volume: 0.08
     pitchRange: {x: 0.98, y: 1.03}
   - cue: 7
     playbackType: 0

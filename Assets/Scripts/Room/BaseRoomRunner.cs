@@ -155,8 +155,10 @@ public abstract class BaseRoomRunner : IRoomRunner
 
         ctx.Narrator.Clear(NarratorChannel.Paper);
 
-        if (cd.onBeforeCheck?.Length > 0)
-            yield return ctx.Narrator.ShowBlocks(cd.onBeforeCheck);
+        yield return ctx.Narrator.ShowBlocks(new[]
+        {
+            new NarrationBlock(BuildCheckAnnouncement(cd), NarratorChannel.World)
+        });
 
         if (CheckAnimator != null)
             yield return CheckAnimator.OnBeforeCheck();
@@ -184,6 +186,16 @@ public abstract class BaseRoomRunner : IRoomRunner
 
         onResult(success ? cd.onSuccess : cd.onFailure);
     }
+
+    private string BuildCheckAnnouncement(RoomData.CheckData checkData)
+    {
+        if (checkData.checkType == CheckSystem.CheckType.Compound)
+            return $"당신의 {GetStatLabel(checkData.stat)}과 {GetStatLabel(checkData.stat2)}가 시험받습니다...";
+
+        return $"당신의 {GetStatLabel(checkData.stat)}이 시험받습니다...";
+    }
+
+    private string GetStatLabel(StatType stat) => stat.ToString();
 
     // ── 결과 분기 ─────────────────────────────────────────
 

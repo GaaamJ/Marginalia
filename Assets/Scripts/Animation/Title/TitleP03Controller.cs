@@ -69,8 +69,7 @@ public class TitleP03Controller : MonoBehaviour
         // 5. 씬 전환
         if (!string.IsNullOrEmpty(nextScene))
         {
-            AudioManager.PlayCue(AudioCue.DoorOpenSfx);
-            SceneTransitioner.Instance.TransitionTo(nextScene);
+            SceneTransitioner.Instance.TransitionTo(nextScene, null, AudioCue.DoorOpenSfx);
         }
     }
 }

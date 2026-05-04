@@ -17,3 +17,7 @@ MonoBehaviour:
     objectID: 
     position: {x: 0, y: 7.5, z: 42}
     rotation: {x: 0, y: 0, z: 0}
+  - prefab: {fileID: 4961725401365491205, guid: 9fb32be02a259ba4c99dc368576c7e9b, type: 3}
+    objectID: 
+    position: {x: -1, y: 3, z: 91}
+    rotation: {x: 0, y: 0, z: 0}

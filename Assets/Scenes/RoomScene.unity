@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 1, g: 1, b: 1, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 0a98eaa61401f3c49a068e4fbd6c2e2a, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -329,7 +329,7 @@ Camera:
   m_GameObject: {fileID: 330585543}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.039215688, g: 0.039215688, b: 0.039215688, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -379,8 +379,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.7, z: -6.15}
+  m_LocalRotation: {x: -0.71325254, y: 0, z: 0, w: 0.7009072}
+  m_LocalPosition: {x: 0, y: 1.0838177, z: -5.897498}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2276,14 +2276,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988000804}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6.15}
+  m_LocalRotation: {x: -0.71325254, y: -0, z: -0, w: 0.7009072}
+  m_LocalPosition: {x: 0, y: 1.1309555, z: -3.1979096}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 910444815}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -91, y: 0, z: 0}
 --- !u!114 &988000808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2447,6 +2447,8 @@ MonoBehaviour:
   symbolShakeMinInterval: 0.04
   symbolShakeMaxInterval: 0.1
   resultColorDuration: 0.15
+  drawCue: 6
+  drawCueInterval: 0.08
 --- !u!114 &1388917329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2913,6 +2915,10 @@ PrefabInstance:
     - target: {fileID: 1145231771635186795, guid: 6791d63ada89a374e9ca6ce0bb0dfd14, type: 3}
       propertyPath: m_fontStyle
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145231771635186795, guid: 6791d63ada89a374e9ca6ce0bb0dfd14, type: 3}
+      propertyPath: m_TextWrappingMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2661828294992984644, guid: 6791d63ada89a374e9ca6ce0bb0dfd14, type: 3}
       propertyPath: m_AnchoredPosition.x

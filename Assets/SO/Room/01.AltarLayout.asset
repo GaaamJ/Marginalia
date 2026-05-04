@@ -27,5 +27,5 @@ MonoBehaviour:
     rotation: {x: -18, y: 0, z: 0}
   - prefab: {fileID: 7964285979072388383, guid: a47591e73b823fd4893dde6ad4840305, type: 3}
     objectID: Door
-    position: {x: 0, y: 2, z: 40}
+    position: {x: 0, y: 2, z: 39.8}
     rotation: {x: -90, y: 0, z: 0}

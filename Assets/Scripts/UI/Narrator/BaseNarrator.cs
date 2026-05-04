@@ -89,7 +89,8 @@ public abstract class BaseNarrator : MonoBehaviour, INarrator
         typingCoroutine = StartCoroutine(TypeText(block.text, tmp, block.shakeIntensity));
         yield return typingCoroutine;
         typingCoroutine = null;
-        StopTypingCueLoop();
+        if (!KeepTypingCueUntilClear)
+            StopTypingCueLoop();
 
         // 타이핑 완료 후 흔들림 시작
         if (block.shakeIntensity > 0f)
@@ -128,6 +129,7 @@ public abstract class BaseNarrator : MonoBehaviour, INarrator
     protected abstract TextMeshProUGUI GetTMP();
 
     protected virtual AudioCue TypingCue => AudioCue.None;
+    protected virtual bool KeepTypingCueUntilClear => false;
 
     protected void StartTypingCueLoop()
     {

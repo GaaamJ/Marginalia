@@ -27,7 +27,7 @@ MonoBehaviour:
         \uC544\uB984\uB2E4\uC6B4 \uC6B0\uC8FC.\r\n\uBB34\uC5B8\uAC00 \uC788\uC74C.
         \uBB34\uC5B8\uAC00 \uC788\uC74C.\n\uBB34\uC5B8\uAC00 \uC788\uC74C. \uBB34\uC5B8\uAC00
         \uC788\uC74C."
-      channel: 0
+      channel: 1
       pauseAfter: 0
       shakeIntensity: 0
       shakeFrequency: 10

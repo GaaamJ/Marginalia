@@ -50,6 +50,9 @@ public class StatRowUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     [SerializeField] private float segmentRevealDelay = 0.15f;
     [SerializeField] private float segmentInterval = 0.08f;
 
+    [Header("Audio")]
+    [SerializeField] private AudioCue revealCue = AudioCue.PaperNarratorSfx;
+
     private int currentValue;
     private Action<int> onValueChanged;
     private Action onHover;
@@ -98,6 +101,8 @@ public class StatRowUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     /// </summary>
     public IEnumerator Reveal()
     {
+        AudioManager.PlayCue(revealCue);
+
         // 1. 라벨 타이핑
         if (labelTMP != null)
         {
