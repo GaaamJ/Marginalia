@@ -23,7 +23,7 @@ public class PaperNarrator : BaseNarrator
     [SerializeField] private TextMeshProUGUI previewTMP;
 
     protected override TextMeshProUGUI GetTMP() => previewTMP;
-    protected override AudioCue TypingCue => AudioCue.PaperWrite;
+    protected override AudioCue TypingCue => AudioCue.PaperNarratorSfx;
 
     // ── ShowText override ────────────────────────────────
     public override IEnumerator ShowText(NarrationBlock block)

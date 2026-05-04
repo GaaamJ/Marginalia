@@ -30,7 +30,6 @@ public class TitleP00Controller : MonoBehaviour
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
             _done = true;
-            AudioManager.PlayCue(AudioCue.TitleClick);
             p00Canvas?.SetActive(false);
             titleSceneController?.OnP00Complete();
         }

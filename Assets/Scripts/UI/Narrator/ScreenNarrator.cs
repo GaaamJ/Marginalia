@@ -39,6 +39,7 @@ public class ScreenNarrator : BaseNarrator
     // ── BaseNarrator 구현 (TMP 공급만) ───────────────────
 
     protected override TextMeshProUGUI GetTMP() => narratorTMP;
+    protected override AudioCue TypingCue => AudioCue.ScreenNarratorSfx;
 
     // ── ShowText / ShowBlocks override — 타이핑 완전 우회 ─
 
@@ -52,8 +53,10 @@ public class ScreenNarrator : BaseNarrator
         if (narratorTMP) narratorTMP.text = block.text;
         currentText = block.text;
 
+        StartTypingCueLoop();
         yield return fadeCoroutine = StartCoroutine(FadeSequence());
         fadeCoroutine = null;
+        StopTypingCueLoop();
     }
 
     public override IEnumerator ShowBlocks(NarrationBlock[] blocks)
@@ -102,6 +105,7 @@ public class ScreenNarrator : BaseNarrator
     public override void Clear()
     {
         if (fadeCoroutine != null) { StopCoroutine(fadeCoroutine); fadeCoroutine = null; }
+        StopTypingCueLoop();
         if (canvasGroup) canvasGroup.alpha = 0f;
         if (narratorTMP) narratorTMP.text = "";
         currentText = "";

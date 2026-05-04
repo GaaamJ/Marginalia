@@ -28,12 +28,13 @@ public abstract class BaseNarrator : MonoBehaviour, INarrator
     [SerializeField] protected float charVariance = 0f;
 
     [Header("Typing SFX")]
-    [SerializeField] private int charactersPerTypingCue = 3;
+    [SerializeField] private float typingCueInterval = 0.06f;
 
     // ── 내부 상태 ─────────────────────────────────────────
 
     private Coroutine typingCoroutine;
     private Coroutine shakeCoroutine;
+    private Coroutine typingCueCoroutine;
 
     /// <summary>타이핑 즉시 완성 플래그 (Skip() 호출 시 true).</summary>
     private bool skipTyping = false;
@@ -84,9 +85,11 @@ public abstract class BaseNarrator : MonoBehaviour, INarrator
         // 타이핑 시작 전 origin 저장 — 흔들림 복원 기준점
         var rect = tmp.rectTransform;
         if (rect != null) shakeOrigin = rect.anchoredPosition;
+        StartTypingCueLoop();
         typingCoroutine = StartCoroutine(TypeText(block.text, tmp, block.shakeIntensity));
         yield return typingCoroutine;
         typingCoroutine = null;
+        StopTypingCueLoop();
 
         // 타이핑 완료 후 흔들림 시작
         if (block.shakeIntensity > 0f)
@@ -126,6 +129,20 @@ public abstract class BaseNarrator : MonoBehaviour, INarrator
 
     protected virtual AudioCue TypingCue => AudioCue.None;
 
+    protected void StartTypingCueLoop()
+    {
+        StopTypingCueLoop();
+        if (TypingCue == AudioCue.None) return;
+        typingCueCoroutine = StartCoroutine(TypingCueLoop());
+    }
+
+    protected void StopTypingCueLoop()
+    {
+        if (typingCueCoroutine == null) return;
+        StopCoroutine(typingCueCoroutine);
+        typingCueCoroutine = null;
+    }
+
     /// <summary>블록 출력 시작 직전 호출. 채널 고유 연출 (확대, 위치 등).</summary>
     protected virtual void OnBlockStart(NarrationBlock block) { }
 
@@ -140,7 +157,6 @@ public abstract class BaseNarrator : MonoBehaviour, INarrator
         // 타이핑 시작 시 origin 저장 — 흔들림 복원 기준점
         shakeOrigin = tmp.rectTransform.anchoredPosition;
 
-        int visibleCharacters = 0;
         foreach (char c in text)
         {
             if (skipTyping)
@@ -154,12 +170,6 @@ public abstract class BaseNarrator : MonoBehaviour, INarrator
             }
 
             tmp.text += c;
-            if (!char.IsWhiteSpace(c))
-            {
-                visibleCharacters++;
-                if (TypingCue != AudioCue.None && visibleCharacters % Mathf.Max(1, charactersPerTypingCue) == 0)
-                    AudioManager.PlayCue(TypingCue);
-            }
 
             // 타이핑 중 미세 흔들림
             if (shakeIntensity > 0f)
@@ -180,6 +190,16 @@ public abstract class BaseNarrator : MonoBehaviour, INarrator
     /// 타이핑 완료 후 지속되는 흔들림.
     /// Clear() / 다음 블록 시작 시 StopTyping()으로 중단.
     /// </summary>
+    private IEnumerator TypingCueLoop()
+    {
+        var wait = new WaitForSeconds(Mathf.Max(0.01f, typingCueInterval));
+        while (true)
+        {
+            AudioManager.PlayCue(TypingCue);
+            yield return wait;
+        }
+    }
+
     private IEnumerator ShakeLoop(TextMeshProUGUI tmp, float intensity, float frequency)
     {
         float interval = 1f / Mathf.Max(frequency, 0.1f);
@@ -214,6 +234,7 @@ public abstract class BaseNarrator : MonoBehaviour, INarrator
             var tmp = GetTMP();
             if (tmp != null) tmp.rectTransform.anchoredPosition = shakeOrigin;
         }
+        StopTypingCueLoop();
         skipTyping = false;
     }
 
