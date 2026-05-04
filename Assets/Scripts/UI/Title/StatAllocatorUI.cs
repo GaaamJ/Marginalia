@@ -87,7 +87,6 @@ public class StatAllocatorUI : MonoBehaviour
             bool signed = false;
             signatureButton.onClick.AddListener(() =>
             {
-                AudioManager.PlayCue(AudioCue.SignatureClick);
                 signed = true;
             });
             yield return new WaitUntil(() => signed);
@@ -137,8 +136,6 @@ public class StatAllocatorUI : MonoBehaviour
         if (newRemain < 0) return;
         if (newVal < PlayerStats.MIN_STAT || newVal > PlayerStats.MAX_STAT) return;
 
-        AudioManager.PlayCue(AudioCue.StatSegmentClick);
-
         allocation[type] = newVal;
         remainingPoints = newRemain;
 
@@ -153,7 +150,6 @@ public class StatAllocatorUI : MonoBehaviour
         foreach (char c in signatureString)
         {
             signatureTMP.text += c;
-            AudioManager.PlayCue(AudioCue.SignatureWrite);
             yield return new WaitForSeconds(signatureInterval);
         }
     }

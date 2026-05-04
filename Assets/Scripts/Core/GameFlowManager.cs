@@ -140,6 +140,8 @@ public class GameFlowManager : MonoBehaviour
     /// </summary>
     private void LoadRoomScene(NarrationBlock[] transitionNarration = null)
     {
+        AudioManager.PlayCue(AudioCue.DoorOpenSfx);
+
         if (SceneTransitioner.Instance != null)
             SceneTransitioner.Instance.TransitionTo(roomSceneName, transitionNarration);
         else

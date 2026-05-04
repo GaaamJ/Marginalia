@@ -29,12 +29,13 @@ public class TitleSceneController : MonoBehaviour
     private void Start()
     {
         AudioManager.PlayCue(AudioCue.TitleBgm);
-        AudioManager.PlayCue(AudioCue.TitleAmbient);
     }
 
     public void OnP00Complete()
     {
         if (CurrentPhase != Phase.P00) return;
+        AudioManager.StopMusicCue();
+        AudioManager.PlayCue(AudioCue.AmbientBgm);
         CurrentPhase = Phase.P01;
         StartCoroutine(p01.Run(OnP01Complete));
     }

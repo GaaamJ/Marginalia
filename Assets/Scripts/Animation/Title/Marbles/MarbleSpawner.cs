@@ -53,8 +53,7 @@ public class MarbleSpawner : MonoBehaviour
     [SerializeField] private float settleSpeed = 0.05f;
     [SerializeField] private float settleDelay = 0.3f;
 
-    [Header("Drop SFX")]
-    [SerializeField] private bool playDropSfxOnBounce = true;
+    [Header("Impact Detection")]
     [SerializeField] private float impactMinFallSpeed = 0.25f;
     [SerializeField] private float impactCooldown = 0.08f;
 
@@ -141,14 +140,12 @@ public class MarbleSpawner : MonoBehaviour
         var feedback = marble.GetComponent<MMF_Player>();
         if (feedback != null)
         {
-            AudioManager.PlayCue(AudioCue.MarbleAppear);
             feedback.PlayFeedbacks();
             yield return new WaitForSeconds(feedback.TotalDuration);
         }
         else
         {
             // MMF 없으면 즉시 스케일 복원
-            AudioManager.PlayCue(AudioCue.MarbleAppear);
             marble.transform.localScale = Vector3.one;
         }
 
@@ -177,9 +174,6 @@ public class MarbleSpawner : MonoBehaviour
             if (impactDetected)
             {
                 impactTimer = 0f;
-
-                if (playDropSfxOnBounce)
-                    AudioManager.PlayCue(AudioCue.MarbleDrop);
 
                 if (!touchedDown)
                 {

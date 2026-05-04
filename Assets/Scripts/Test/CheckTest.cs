@@ -50,6 +50,8 @@ public class CheckTest : MonoBehaviour
         else
             success = CheckSystem.RollDebug(stat, checkType, threshold, out _);
 
+        AudioManager.PlayCue(AudioCue.PaperCheckSfx);
+
         if (checkPhaseAnimator != null)
             yield return checkPhaseAnimator.OnAfterCheck(success);
     }
@@ -134,6 +136,8 @@ public class CheckTest : MonoBehaviour
 
             // 5. Roll
             bool success = CheckSystem.RollDebug(check.stat, check.checkType, check.threshold, out _);
+
+            AudioManager.PlayCue(AudioCue.PaperCheckSfx);
 
             // 6. 결과 연출
             yield return checkPhaseAnimator.OnAfterCheck(success);

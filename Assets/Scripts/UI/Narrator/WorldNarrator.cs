@@ -28,7 +28,7 @@ public class WorldNarrator : BaseNarrator
     private Coroutine fadeCoroutine;
 
     protected override TextMeshProUGUI GetTMP() => narratorTMP;
-    protected override AudioCue TypingCue => AudioCue.WorldNarrator;
+    protected override AudioCue TypingCue => AudioCue.WorldNarratorSfx;
 
     // ── 훅 ───────────────────────────────────────────────
 

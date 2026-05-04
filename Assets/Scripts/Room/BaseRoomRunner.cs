@@ -167,6 +167,8 @@ public abstract class BaseRoomRunner : IRoomRunner
             ? CheckSystem.RollCompound(cd.stat, cd.threshold, cd.stat2, cd.threshold2)
             : CheckSystem.Roll(cd.stat, cd.checkType, cd.threshold);
 
+        AudioManager.PlayCue(AudioCue.PaperCheckSfx);
+
         if (CheckAnimator != null)
             yield return CheckAnimator.OnAfterCheck(success);
         else if (phase.animator != null)

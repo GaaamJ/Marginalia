@@ -3102,7 +3102,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 191789566}
-  - component: {fileID: 191789567}
   m_Layer: 0
   m_Name: MarbleDropSFX
   m_TagString: Untagged
@@ -3125,19 +3124,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1302510255}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &191789567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 191789565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3db40a5498fb1314ca4b102e92190298, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioCuePlayer
-  cue: 15
 --- !u!1001 &274084567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4368,7 +4354,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 344906033}
-  - component: {fileID: 344906034}
   m_Layer: 0
   m_Name: MarbleAppearSFX
   m_TagString: Untagged
@@ -4391,19 +4376,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1302510255}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &344906034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 344906032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3db40a5498fb1314ca4b102e92190298, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioCuePlayer
-  cue: 14
 --- !u!1001 &361640978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8463,7 +8435,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 732747919}
-  - component: {fileID: 732747920}
   m_Layer: 0
   m_Name: MaskApproachSFX
   m_TagString: Untagged
@@ -8486,19 +8457,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1422448540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &732747920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 732747918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3db40a5498fb1314ca4b102e92190298, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioCuePlayer
-  cue: 11
 --- !u!1001 &816638597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9424,7 +9382,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 883215052}
-  - component: {fileID: 883215053}
   m_Layer: 0
   m_Name: MaskArriveSFX
   m_TagString: Untagged
@@ -9447,19 +9404,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1422448540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &883215053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 883215051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3db40a5498fb1314ca4b102e92190298, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioCuePlayer
-  cue: 12
 --- !u!1 &1012016197
 GameObject:
   m_ObjectHideFlags: 0
@@ -11232,7 +11176,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1241008689}
-  - component: {fileID: 1241008690}
   m_Layer: 0
   m_Name: PaperSlideOnTableSFX
   m_TagString: Untagged
@@ -11255,19 +11198,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1894534520}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1241008690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1241008688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3db40a5498fb1314ca4b102e92190298, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioCuePlayer
-  cue: 13
 --- !u!1 &1302510254
 GameObject:
   m_ObjectHideFlags: 0
@@ -11333,7 +11263,6 @@ MonoBehaviour:
   rollSpeedMax: 1.5
   settleSpeed: 0.05
   settleDelay: 0.3
-  playDropSfxOnBounce: 1
   impactMinFallSpeed: 0.25
   impactCooldown: 0.08
 --- !u!1 &1365320697
@@ -11345,7 +11274,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1365320698}
-  - component: {fileID: 1365320699}
   m_Layer: 0
   m_Name: MaskAppearSFX
   m_TagString: Untagged
@@ -11368,19 +11296,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1422448540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1365320699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365320697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3db40a5498fb1314ca4b102e92190298, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioCuePlayer
-  cue: 10
 --- !u!1001 &1378665500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12297,7 +12212,6 @@ GameObject:
   - component: {fileID: 1422448540}
   - component: {fileID: 1422448541}
   - component: {fileID: 1422448542}
-  - component: {fileID: 1422448543}
   m_Layer: 0
   m_Name: MaskRoot
   m_TagString: Untagged
@@ -13071,19 +12985,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MaskAnimator
   appearFeedback: {fileID: 1422448541}
---- !u!114 &1422448543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422448539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3db40a5498fb1314ca4b102e92190298, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioCuePlayer
-  cue: 0
 --- !u!1001 &1424389670
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,31 +4,14 @@ public enum AudioCue
 
     // Music / Ambience
     TitleBgm,
-    TitleAmbient,
+    AmbientBgm,
 
-    // UI
-    TitleClick,
-    PaperClick,
-    StatSegmentClick,
-    SignatureClick,
-
-    // Narration / Writing
-    WorldNarrator,
-    PaperWrite,
-    SignatureWrite,
-
-    // Mask
-    MaskAppear,
-    MaskApproach,
-    MaskArrive,
-
-    // Paper / Table
-    PaperSlideOnTable,
-
-    // Marbles
-    MarbleAppear,
-    MarbleDrop,
+    // Narration / Feedback
+    WorldNarratorSfx,
+    ScreenNarratorSfx,
+    PaperNarratorSfx,
+    PaperCheckSfx,
 
     // Transition
-    SceneTransition,
+    DoorOpenSfx,
 }

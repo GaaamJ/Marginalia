@@ -63,7 +63,6 @@ public class TitleP02Controller : MonoBehaviour
 
             yield return new WaitUntil(() => clicked);
 
-            AudioManager.PlayCue(AudioCue.PaperClick);
             notebookButton.onClick.RemoveAllListeners();
 
             // 5. 카메라 전환

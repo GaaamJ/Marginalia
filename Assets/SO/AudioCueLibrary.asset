@@ -16,80 +16,35 @@ MonoBehaviour:
   - cue: 1
     playbackType: 1
     clips: []
-    volume: 0
-    pitchRange: {x: 0, y: 0}
+    volume: 1
+    pitchRange: {x: 1, y: 1}
   - cue: 2
     playbackType: 2
     clips: []
-    volume: 0
-    pitchRange: {x: 0, y: 0}
+    volume: 1
+    pitchRange: {x: 1, y: 1}
   - cue: 3
     playbackType: 0
     clips: []
-    volume: 0
-    pitchRange: {x: 0, y: 0}
+    volume: 1
+    pitchRange: {x: 1, y: 1}
   - cue: 4
     playbackType: 0
     clips: []
-    volume: 0
-    pitchRange: {x: 0, y: 0}
+    volume: 1
+    pitchRange: {x: 1, y: 1}
   - cue: 5
     playbackType: 0
     clips: []
-    volume: 0
-    pitchRange: {x: 0, y: 0}
+    volume: 1
+    pitchRange: {x: 1, y: 1}
   - cue: 6
     playbackType: 0
     clips: []
-    volume: 0
-    pitchRange: {x: 0, y: 0}
+    volume: 1
+    pitchRange: {x: 1, y: 1}
   - cue: 7
     playbackType: 0
     clips: []
-    volume: 0
-    pitchRange: {x: 0, y: 0}
-  - cue: 8
-    playbackType: 0
-    clips: []
-    volume: 0
-    pitchRange: {x: 0, y: 0}
-  - cue: 9
-    playbackType: 0
-    clips: []
-    volume: 0
-    pitchRange: {x: 0, y: 0}
-  - cue: 10
-    playbackType: 0
-    clips: []
-    volume: 0
-    pitchRange: {x: 0, y: 0}
-  - cue: 11
-    playbackType: 0
-    clips: []
-    volume: 0
-    pitchRange: {x: 0, y: 0}
-  - cue: 12
-    playbackType: 0
-    clips: []
-    volume: 0
-    pitchRange: {x: 0, y: 0}
-  - cue: 13
-    playbackType: 0
-    clips: []
-    volume: 0
-    pitchRange: {x: 0, y: 0}
-  - cue: 14
-    playbackType: 0
-    clips: []
-    volume: 0
-    pitchRange: {x: 0, y: 0}
-  - cue: 15
-    playbackType: 0
-    clips: []
-    volume: 0
-    pitchRange: {x: 0, y: 0}
-  - cue: 16
-    playbackType: 0
-    clips: []
-    volume: 0
-    pitchRange: {x: 0, y: 0}
+    volume: 1
+    pitchRange: {x: 1, y: 1}
