@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3249445942829817936, guid: cb41948b2723207408797f6ca2bb2411, type: 3}
       propertyPath: m_Name
-      value: Door Variant
+      value: AltarDoor
       objectReference: {fileID: 0}
     - target: {fileID: 3249445942829817936, guid: cb41948b2723207408797f6ca2bb2411, type: 3}
       propertyPath: m_Layer
@@ -133,4 +133,4 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 6014275905671861448, guid: 8556f4aed3e5faf46af52d1b8c43d25d, type: 3}
+  m_Mesh: {fileID: 6014275905671861448, guid: fe868d123eb6f8a46a12504d7504d711, type: 3}
