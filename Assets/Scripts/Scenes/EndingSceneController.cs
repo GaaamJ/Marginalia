@@ -31,6 +31,9 @@ public class EndingSceneController : MonoBehaviour
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
 #if UNITY_EDITOR
         if (useTestData)
         {

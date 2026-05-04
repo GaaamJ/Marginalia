@@ -251,10 +251,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0c34213ed3ec6a34b8e1ccfce6adc0be, type: 2}
   - {fileID: 11400000, guid: 87c6e10dd20adff4cb17563e1c4d9931, type: 2}
   - {fileID: 11400000, guid: c65bd39e901037e429374f27d7066e49, type: 2}
+  - {fileID: 11400000, guid: 6d474af07b7f12d45bda39f50c713dae, type: 2}
   - {fileID: 11400000, guid: 0a8737ded282cfe42a6346b99a8d6ac2, type: 2}
   layoutDataSequence:
   - {fileID: 11400000, guid: cd5a9645b40225b46bdec81996b2c89e, type: 2}
   - {fileID: 11400000, guid: d1765d31e37c61848b0062063201afc5, type: 2}
+  - {fileID: 11400000, guid: 4111135b1bf85994589228bf0e1066f4, type: 2}
+  - {fileID: 11400000, guid: 6051966871fcbc1448856effec792acd, type: 2}
+  - {fileID: 11400000, guid: cfda8300a00f45546abb9581c791b3f6, type: 2}
+  - {fileID: 11400000, guid: cf331154296158c4cbe1ca405dc35f5c, type: 2}
+  - {fileID: 11400000, guid: 99178873f5912a347a6b2a1baf227583, type: 2}
+  - {fileID: 11400000, guid: 2988ede8a5bd8b244ac685131b3b545c, type: 2}
+  - {fileID: 11400000, guid: acc597e8a82071d438178f60fcd4dc29, type: 2}
   encoreRoomData: {fileID: 11400000, guid: ed50645900356e44483055c97dae1ab7, type: 2}
   roomSceneName: RoomScene
   endingSceneName: EndingScene

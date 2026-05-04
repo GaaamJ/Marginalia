@@ -37,6 +37,7 @@ public class SceneTransitioner : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
+        EnsureFadeImage();
         ConfigureFadeImage();
         if (fadeImage) SetAlpha(0f);
     }
@@ -111,6 +112,24 @@ public class SceneTransitioner : MonoBehaviour
     {
         if (!fadeImage) return;
 
+        var canvas = fadeImage.GetComponentInParent<Canvas>();
+        if (canvas != null)
+        {
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.overrideSorting = true;
+            canvas.sortingOrder = 9999;
+        }
+
+        var parentRect = fadeImage.transform.parent as RectTransform;
+        if (parentRect != null)
+        {
+            parentRect.localScale = Vector3.one;
+            parentRect.anchorMin = Vector2.zero;
+            parentRect.anchorMax = Vector2.one;
+            parentRect.offsetMin = Vector2.zero;
+            parentRect.offsetMax = Vector2.zero;
+        }
+
         fadeImage.raycastTarget = false;
 
         var color = fadeImage.color;
@@ -126,5 +145,25 @@ public class SceneTransitioner : MonoBehaviour
         rect.offsetMax = Vector2.zero;
         rect.pivot = new Vector2(0.5f, 0.5f);
         rect.SetAsLastSibling();
+    }
+
+    private void EnsureFadeImage()
+    {
+        if (fadeImage != null) return;
+
+        var canvasObject = new GameObject("SceneTransitionFadeCanvas", typeof(RectTransform), typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
+        canvasObject.transform.SetParent(transform, false);
+
+        var canvasRect = canvasObject.GetComponent<RectTransform>();
+        canvasRect.localScale = Vector3.one;
+        canvasRect.anchorMin = Vector2.zero;
+        canvasRect.anchorMax = Vector2.one;
+        canvasRect.offsetMin = Vector2.zero;
+        canvasRect.offsetMax = Vector2.zero;
+
+        var imageObject = new GameObject("FadeImage", typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
+        imageObject.transform.SetParent(canvasObject.transform, false);
+
+        fadeImage = imageObject.GetComponent<Image>();
     }
 }

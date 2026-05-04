@@ -317,7 +317,7 @@ MonoBehaviour:
     onEnter:
     - text: "\uD589\uB3D9: \uB208\uC744 \uAC10\uC73C\uC138\uC694.\n\uD589\uB3D9:
         \uAE30\uB300\uD558\uC138\uC694. "
-      channel: 1
+      channel: 2
       pauseAfter: 1.5
       shakeIntensity: 0.8
       shakeFrequency: 8
